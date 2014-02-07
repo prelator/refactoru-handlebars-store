@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Storefront</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div id="product-container" class="container">
+            <h1>Products</h1>
+            <script id="product-template" type="text/x-handlebars-template">
+                <div class="product" data-name="{{title}}" data-price="{{cost}}">
+                    <h2 class="prod-title">{{title}}</h2>                
+                    <div class='cost'>${{cost}}</div>
+                    <img class='product-image' src={{image}}>                    
+                    <button type="button" id="add-item" class="btn-add">Add to wishlist</button> 
+                </div>
+            </script>    
+        </div>
+        <div id="wishlist-container" class="container">
+            <h1>Wishlist</h1>
+            <ul id="wishlist">
+               
+               <script type="text/x-handlebars-template" id="wish-template">
+                     <li class="wish-list-item">
+                        <div class="wish-item" data-name="{{title}}">
+                            <button type="button" id="remove-item" class="btn-remove">Remove</button>   
+                           {{title}} - ${{price}}                            
+                        </div>
+                    </li>             
+                </script> 
+            </ul>
+        </div>
+	    <!-- Scipts below here -->
+	    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+        <script src="products-data.js"></script>
+	    <script src="app.js"></script> 
+    </body>
+</html>
